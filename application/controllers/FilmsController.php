@@ -174,7 +174,6 @@ class FilmsController extends Zend_Controller_Action
         }
     }
 
-
 //    public function delAction()
 //    {
 //        $id = $this->getRequest()
@@ -182,6 +181,5 @@ class FilmsController extends Zend_Controller_Action
 //        $modelDel = new Application_Model_Films();
 //        $modelDel->deleteFilm($id);
 //    }
-
 
 }
