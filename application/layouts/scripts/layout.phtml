@@ -1,0 +1,51 @@
+<?php
+// Создаём meta тег Content-Type
+$this->headMeta()->appendHttpEquiv('Content-Type', 'text/html;charset=utf-8');
+
+// Указываем символ разделитель в теге title
+$this->headTitle()->setSeparator(' - ');
+
+// Определяем содержимое тега title
+$this->headTitle('Каталог фильмецов');
+
+// Выводим doctype, который считывается из application.ini
+echo $this->doctype();
+?>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <?php
+    // Выводим meta теги
+    echo $this->headMeta();
+    ?>
+
+    <?php
+    // Выводим заголовок сайта
+    echo $this->headTitle();
+    ?>
+
+    <?php
+    // Прикрепляем таблицу стилей
+    echo $this->headLink()->prependStylesheet($this->baseUrl() . '/css/films.css');
+    ?>
+
+</head>
+<body>
+<div id="content">
+    <h1>
+
+        <?php
+        // Выводим заголовок странице, который будем формировать в каждом view
+        echo $this->escape($this->title);
+        ?>
+
+    </h1>
+
+    <?php
+    // Данная запись выводит содержимое view
+    echo $this->layout()->content;
+    ?>
+
+</div>
+</body>
+</html>

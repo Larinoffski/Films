@@ -1,0 +1,11 @@
+<tr>
+    <td><?php echo $this->escape($this->name);?></td>
+    <td><?php echo $this->escape($this->year);?></td>
+    <td><?php echo $this->escape($this->country);?></td>
+    <td><?php echo $this->escape($this->genre);?></td>
+    <td><?php echo $this->escape($this->director);?></td>
+    <td>
+        <a href="<?php echo $this->url(array('controller'=>'films', 'action'=>'upd', 'id'=>$this->id));?>">Редактировать</a>
+        <a href="<?php echo $this->url(array('controller'=>'films', 'action'=>'del', 'id'=>$this->id));?>">Удалить</a>
+    </td>
+</tr>

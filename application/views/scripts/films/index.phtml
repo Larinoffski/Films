@@ -1,0 +1,23 @@
+<?php
+// Создаём заголовок страницы, который загрузится в layout
+$this->title = "Мои любимые фильмы";
+$this->headTitle($this->title);
+?>
+
+<p><a href="<?php echo $this->url(array('controller'=>'films','action'=>'add'));?>">Добавить новый фильм</a></p>
+<table>
+        <tr>
+                <th>Название</th>
+                <th>Год</th>
+                <th>Страна</th>
+                <th>Жанр</th>
+                <th>Режиссёр</th>
+                <th> </th>
+            </tr>
+
+        <?php
+            // Создаём partialLoop, передав массив фильмов, полученных от контроллера
+            echo $this->partialLoop('partials/film.phtml', $this->films);
+        ?>
+
+</table>

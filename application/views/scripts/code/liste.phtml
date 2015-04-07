@@ -1,0 +1,38 @@
+<h1>liste des codes :</h1>
+<table class="table table-striped">
+    <tr>
+        <th>code</th>
+        <th>voir</th>
+        <th>modifier</th>
+        <th>supprimer</th>
+    </tr>
+    <?php foreach($this->codes as $code): ?>
+    <tr>
+        <td><?php echo $code["code"]; ?></td>
+        <td>
+            <a href="<?php echo $this->url(array(
+                    'module' => 'default',
+                    'controller' => 'code',
+                    'action' => 'show',
+                    'id' => $code["id"]),
+                'default', true) ?>"> Show </a>
+        </td>
+        <td>
+            <a href="<?php echo $this->url(array(
+                'module' => 'default',
+                'controller' => 'code',
+                'action' => 'update',
+                'id' => $code["id"]),
+            'default', true) ?>"> Update </a>
+        </td>
+        <td>
+            <a onclick="javascript:confirm('êtes vous sur de vouloir le supprimer ?');" href="<?php echo $this->url(array(
+                    'module' => 'default',
+                    'controller' => 'code',
+                    'action' => 'delete',
+                    'id' => $code["id"]),
+                'default', true) ?>"> Delete </a>
+        </td>
+    </tr>
+    <?php endforeach; ?>
+</table>

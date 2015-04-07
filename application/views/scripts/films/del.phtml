@@ -1,0 +1,25 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: laring
+ * Date: 07.04.15
+ * Time: 14:58
+ */
+
+    $this->title = "Удаление фильма";
+    $this->headTitle($this->title);
+?>
+<p>Вы действительно хотите удалить фильм
+    '<?php echo $this->escape($this->film['name']); ?>'
+    '<?php echo $this->escape($this->film['year']); ?>'
+    '<?php echo $this->escape($this->film['country']); ?>'
+    '<?php echo $this->escape($this->film['genre']); ?>' от
+    '<?php echo $this->escape($this->film['director']); ?>'?
+</p>
+<form action="<?php echo $this->url(array('action'=>'del')); ?>" method="post">
+    <div>
+        <input type="hidden" name="id" value="<?php echo $this->film['id']; ?>" />
+        <input type="submit" name="del" value="Да" />
+        <input type="submit" name="del" value="Нет" />
+    </div>
+</form>
